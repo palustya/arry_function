@@ -103,3 +103,9 @@
 .error {
     color: red !important;
 }
+
+.nav-search .form-control {
+	border: 2px solid #dee2e6;
+    background: transparent;
+    font-size: 14px;
+}

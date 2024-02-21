@@ -1,12 +1,12 @@
 <?php
-
+session_start();
 //die;
 
-error_reporting(E_ALL);
-error_reporting(-1);
+// error_reporting(E_ALL);
+// error_reporting(-1);
 
-// Same as error_reporting(E_ALL);
-ini_set('error_reporting', E_ALL);
+// // Same as error_reporting(E_ALL);
+// ini_set('error_reporting', E_ALL);
 
 include('conn.php');
 
@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact_no = $_POST["contact_no"];
     $status = $_POST["status"];
 
+    
     // Check if phone number already exists
     $sql_1 = "SELECT * FROM users WHERE contact_no = '$contact_no'";
     $res = $conn->query($sql_1);
@@ -34,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO users (firstname,lastname,email,password,contact_no,status) VALUES ('$first_name', '$last_name', '$email', '$password','$contact_no','$status')";
        
         if (mysqli_query($conn, $sql)) {
+            unset($_SESSION['error_message']);
             $status= "Record Added successfully";
             header('Location: index.php?msg='.$status);
         } else {
@@ -41,10 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else{
     
-session_start();
+        unset($_SESSION['error_message']);
         $_SESSION['error_message'] = 'Contact Number already exists';
-       
-        header('Location: create_user.php');
+         header('Location: create_user.php');
         
         die;
     }

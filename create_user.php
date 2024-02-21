@@ -2,24 +2,37 @@
 session_start();
 include('header.php'); 
 include('left_sidebar.php');
-print_r($_SESSION);
-//die;
+// print_r($_SESSION);
+// die;
+
 ?>
 <style>
 	.form-group .error {
 		color: red;
 	}
 </style>
+
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
 						<h4 class="page-title">Forms</h4>
+						
 						<div class="row">
                             <div class="col-md-2"></div>
 							<div class="col-md-8">
 								
 									<div class="card">
-                                        <form action="add_user.php" method="post" id="userForm">
+									<?php
+										if(isset($_SESSION['error_message'])) { ?>
+											<p class="mt-3" style="color:red; text-align:center;">
+												<?php echo $_SESSION['error_message'];
+													  unset($_SESSION['error_message']);
+												?>
+											</p>
+										<?php
+										 }
+										?>         
+										  <form action="add_user.php" method="post" id="userForm">
 										<div class="card-header">
 											<div class="card-title"> UserForm </div>
 										</div>
@@ -37,13 +50,15 @@ print_r($_SESSION);
 												<input type="Email" name="email" class="form-control form-control-sm" id="email" placeholder="email">
 												
 											</div>
-                                            <div class="form-group">
+											<div class="form-group">
 												<label for="password">Password</label>
-												<input type="text" name="password" class="form-control form-control-sm" id="Password" placeholder="Password">
+												<input type="password" name="password" class="form-control form-control-sm" id="pwd" placeholder="password" name="pwd" minlength="8">
+											</div>
 												
+
 												<div class="form-group">
 													<label for="contact_no" unique="contact_no">Contact No</label>
-												 <input type="Number" name="contact_no" class="form-control form-control-sm" id="contact_no" placeholder="contact_no">  
+												 	<input type="Number" name="contact_no" class="form-control form-control-sm" id="contact_no" placeholder="contact_no">  
 												</div>
 
 												<div class="form-group">
@@ -108,4 +123,5 @@ print_r($_SESSION);
 	// Set max length for number input
 									
 });
+
 </script>
