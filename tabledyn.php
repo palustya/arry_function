@@ -53,7 +53,8 @@
             } elseif (isset($_POST['edit'])) {
                 // You can implement the edit logic here
                 // For example, redirect to an edit page with the selected ID
-                header("Location: tabledyn.php?id=$id");
+                header("Location: tabledyn
+                .php?id=$id");
                 exit();
             }
         } else {

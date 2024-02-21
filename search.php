@@ -15,9 +15,8 @@ if (isset($_GET['search'])) {
         echo "No results found for '$searchQuery'";
     }
 }
-
 ?>
-<html>
+<html> 
 <html lang="en">
 <body>
     <form action="search.php" method="get">
