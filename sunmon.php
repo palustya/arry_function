@@ -8,7 +8,7 @@
     );
 }
 foreach (getSunday(2024, 2) as $sunday) {
-    echo $sunday->format("l, d-m-y")."<br>";
+    echo $Sunday->format("l, d-m-y")."<br>";
 }
 ?>
 

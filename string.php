@@ -12,7 +12,7 @@ function MixedArray($mixedArray){
             $oddNumbersArray[] = $number;
         }
     }
-    sort($oddNumbersArray);
+        ksort($oddNumbersArray);
     sort($evenNumbersArray);
     $stringsArray = array_filter($mixedArray, 'is_string');
     return ['odd_numbers' => $oddNumbersArray, 'even_numbers' => $evenNumbersArray, 'strings' => $stringsArray];

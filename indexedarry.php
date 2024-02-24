@@ -101,7 +101,6 @@ echo chop($str)."<br>";
 $str = "PANKAJ-SHARMA";
 echo chunk_split($str,1 ,".")."<br>";
 
-
 //Chr value
 echo chr(52) . "<br>"; // Decimal value
 echo chr(052) . "<br>"; // Octal value
