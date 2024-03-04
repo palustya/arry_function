@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('conn.php');
 include('header.php');
 include('left_sidebar.php');
@@ -20,7 +21,18 @@ $result = mysqli_fetch_assoc($exeUsers);
 						<div class="row">
                             <div class="col-md-2"></div>
 							<div class="col-md-8">
-								
+							<div class="card">
+									<?php
+										if(isset($_SESSION['error_message'])) { ?>
+											<p class="mt-3" style="color:red; text-align:center;">
+												<?php echo $_SESSION['error_message'];
+													  unset($_SESSION['error_message']);
+													  
+												?>
+											</p>
+										<?php
+										 }
+										?>    
 									<div class="card">
                                         <form action="update_user.php" method="post" id="editForm">
 											<input type="hidden" name="user_id" value="<?php echo $result['id']; ?>" />
@@ -45,7 +57,7 @@ $result = mysqli_fetch_assoc($exeUsers);
 											</div>
                                             <div class="form-group">
 												<label for="password">Password</label>
-												<input type="text" name="password" class="form-control form-control-sm" id="Password" value="<?php echo $result['password']; ?>">
+												<input type="password" name="password" class="form-control form-control-sm" id="pwd" placeholder="password" name="pwd" minlength="8">
 
 											</div>
 											<div class="form-group">

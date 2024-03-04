@@ -7,7 +7,7 @@
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
+									Panakj Sharma
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -49,7 +49,7 @@
 								<p>Users</p>
 							</a>
 						</li>
-						<!-- <li class="nav-item active">
+						<li class="nav-item active">
 							<a href="forms.html">
 								<i class="la la-keyboard-o"></i>
 								<p>Forms</p>
@@ -70,13 +70,7 @@
 								<span class="badge badge-success">3</span>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a href="typography.html">
-								<i class="la la-font"></i>
-								<p>Typography</p>
-								<span class="badge badge-danger">25</span>
-							</a>
-						</li>
+							
 						<li class="nav-item">
 							<a href="icons.html">
 								<i class="la la-fonticons"></i>
