@@ -1,18 +1,19 @@
 <?php
-class test {
-    public $Public; // Public property
-    public function Public() {
-        return "This is a public method.";
+class Car {
+    // Public property
+    public $model;
+        // Public method
+    public function startEngine() {
+        return "Engine started!";
     }
 }
-
-// Creating an object of the class
-$obj = new test();
-// Accessing the public property
-$obj->Public = "This is for test";
-// Calling the public method
-$result = $obj->Public();
-// Displaying the results
-echo "Public: " . $obj->Public . "<br>";
-echo "Public Method Result: " . $result;
+// Object banate hain
+$myCar = new Car();
+// Public property  set karte hain
+$myCar->model = "ford";
+// Public method ko call karte hain
+$engineStatus = $myCar->startEngine();
+// Output ko print karte hain
+echo "Car Model: " . $myCar->model . "<br>";
+echo "Engine Status: " . $engineStatus;
 ?>

@@ -7,7 +7,6 @@ class MyClass {
 }
 // Creating an object of the class
 $obj = new MyClass();
-
 class AnotherClass extends MyClass {
     public function accessProtectedMethod() {
         return $this->myProtectedMethod();
@@ -20,3 +19,4 @@ $result = $derivedObj->accessProtectedMethod();
 // Displaying the result
 echo "Protected Method Result: " . $result;
 ?>
+

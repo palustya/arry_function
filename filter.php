@@ -23,7 +23,6 @@ $people = [
     ['name' => 'shail', 'age' => 28, 'email' =>'dinesh@mail.com', 'phone_no' => 5201111035],
     ['name' => 'chirag', 'age' => 32, 'email' =>'chirag@mail.com', 'phone_no' => 7201111035],
 ];
-
 if (isset($_GET['search'])) {
     $searchQuery = $_GET['search'];
     $customFilterCallback = function ($person) use ($searchQuery) {
